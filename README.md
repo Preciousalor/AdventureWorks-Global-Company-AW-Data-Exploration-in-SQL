@@ -2,9 +2,7 @@
 In this project, we extract, transform, and load the customer base data of AW for a more effective social media marketing
 
 ### Queries
-
---situations where inner join may not work.
-
+´´´
 SELECT
 
 dp.EnglishProductName AS ProdutName,
@@ -130,3 +128,5 @@ SELECT
 FROM vwOrdersALL
 
 WHERE OrderDate = (SELECT MAX(OrderDate) FROM vwOrdersALL)
+
+´´´
