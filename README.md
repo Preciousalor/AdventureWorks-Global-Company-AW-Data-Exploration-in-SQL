@@ -2,7 +2,10 @@
 In this project, we extract, transform, and load the customer base data of AW for a more effective social media marketing
 
 ### Queries
-´´´
+
+´´´sql
+
+
 SELECT
 
 dp.EnglishProductName AS ProdutName,
