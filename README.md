@@ -3,7 +3,7 @@ In this project, we extract, transform, and load the customer base data of AW fo
 
 ### Queries
 
-´´´sql
+```Sql
 
 
 SELECT
@@ -132,4 +132,4 @@ FROM vwOrdersALL
 
 WHERE OrderDate = (SELECT MAX(OrderDate) FROM vwOrdersALL)
 
-´´´
+```
