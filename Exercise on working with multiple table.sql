@@ -1,4 +1,4 @@
----Exercise 4A
+### Selecting top 5 products from United States
 
 
 SELECT TOP (5) 
@@ -24,8 +24,7 @@ GROUP BY dpsc.EnglishproductSubcategoryName
 ORDER BY SalesAmount DESC
 
 
---Exercise 4B
-
+### Selecting product descriptions from Europe
 SELECT
 
     CONCAT(de.FirstName,' ', de.LastName) AS EmployeeName,
