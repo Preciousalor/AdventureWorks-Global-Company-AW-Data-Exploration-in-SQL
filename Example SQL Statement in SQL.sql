@@ -1,3 +1,5 @@
+
+
 SELECT Customerkey as CustomerID, SUM(SalesAmount) as SalesAmount
 
 FROM FactInternetSales
