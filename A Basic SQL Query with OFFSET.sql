@@ -1,4 +1,4 @@
---A basic query as part of SQL fundamental course, including OFFSET FETCH.
+### SQL query including OFFSET FETCH.
 
 
 SELECT
