@@ -1,10 +1,7 @@
 # AdventureWorks-AW-Data-Exploration
 In this project, we extract, transform, and load the customer base data of AW for a more effective social media marketing
 
-### Queries
-
-```Sql
-
+# Selecting all Cureent product descriptions
 
 SELECT
 
@@ -30,7 +27,7 @@ WHERE dp.Status = N'Current'
 
 
 
-/* Test for number of total current products
+# Test for the number of total current products
 
 SELECT 
 
@@ -44,7 +41,7 @@ WHERE [status] = N'current'
 
 
 
----multiple tables, Right join
+# multiple tables, Right join
 
 
 SELECT
@@ -67,7 +64,7 @@ GROUP BY dp.EnglishProductName, dp.Color, dp.Size
 ORDER BY SalesAmount DESC
 
 
---Multiple Tables Left join
+# Multiple Tables Left join
 
 SELECT
 
@@ -94,7 +91,7 @@ GROUP BY dp.EnglishProductName, dp.Color, dp.Size
 ORDER BY SalesAmount DESC
 
 
---Joining columns under Bridge in
+# Joining columns 
 
 SELECT 
 
@@ -111,13 +108,15 @@ FROM FactInternetSales AS fs
     INNER JOIN DimSalesReason AS dsr 
     ON fsr.SalesReasonKey = dsr.SalesReasonKey
 
---WHERE fs.SalesOrderNumber = N'SO51178'
+WHERE fs.SalesOrderNumber = N'SO51178'
 
 
 GROUP BY dsr.SalesReasonReasonType
 
+# Creating a view
 
---subselect in a select option
+
+# subselect in a view
 
 SELECT
     InvoiceNumber,
@@ -132,4 +131,4 @@ FROM vwOrdersALL
 
 WHERE OrderDate = (SELECT MAX(OrderDate) FROM vwOrdersALL)
 
-```
+
