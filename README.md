@@ -1,7 +1,7 @@
-# AdventureWorks-AW-Data-Exploration
+### AdventureWorks-AW-Data-Exploration
 In this project, we extract, transform, and load the customer base data of AW for a more effective social media marketing
 
-# Selecting all Cureent product descriptions
+# Selecting all Current product descriptions
 
 SELECT
 
