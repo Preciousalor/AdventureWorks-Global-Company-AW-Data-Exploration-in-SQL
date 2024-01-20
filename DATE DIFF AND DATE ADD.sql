@@ -1,5 +1,5 @@
---Aggregating in SQL
---Counting rows with COUNT() aggregation
+### Aggregating in SQL
+### Counting rows with COUNT() aggregation
 
 SELECT
 
@@ -9,7 +9,7 @@ AVG(YearlyIncome) AS AverageIncome
 
 FROM DimCustomer
 
---Manupulating Values Date Functions
+### Manipulating Values Date Functions
 SELECT
 
 GETDATE() AS DateTimeStamp,
@@ -37,10 +37,10 @@ MONTH('2020-10-11') AS MonthNumerical
 
 SELECT DATENAME(MONTH,2020/10/11) AS DateName
 
---EXplaining SERVERPROPERTY
+### EXplaining SERVERPROPERTY
 SELECT CONVERT (varchar(256), SERVERPROPERTY('collation'))
 
---CASE INSENSITIVE
+### CASE INSENSITIVE
 SELECT *
 
 FROM DimProduct
@@ -63,7 +63,7 @@ FROM DimProduct
 WHERE FrenchDescription='Acier Chrome.'
 
 
---CONCAT;LENGTH;LOWER;UPPER;REPLACE;LEFT:RIGHT
+### CONCAT;LENGTH;LOWER;UPPER;REPLACE;LEFT:RIGHT
 
 SELECT
 
@@ -81,8 +81,7 @@ WHERE ProductKey = 555
 
 
 
--- Working with =,<>,IS,IS NOT, >,<
--- to determine in advance the type of data in a column, simply look at the enclosed bracket in the name of the file. This will ensure that you write codes that works.
+### Working with =,<>,IS,IS NOT, >,< : to determine in advance the type of data in a column, simply look at the enclosed bracket in the name of the file. This will ensure that you write codes that works.
 
 SELECT *
 
@@ -92,7 +91,7 @@ FROM DIMProduct
 WHERE CLASS IS NOT NULL
 
 
---Another example
+## Another example
 
 SELECT *
 
@@ -101,8 +100,7 @@ FROM DIMProduct
 WHERE CLASS <> 'H' OR CLASS IS NULL
 
 
---Manupulating values, logical operators
---adding parenthesis to explictly tell it the order it should carry out a logical qeuery.
+### Manupulating values, logical operators, adding parenthesis to explicitly tell it the order it should carry out a logical qeuery.
 
 SELECT 
 
@@ -116,7 +114,7 @@ FROM DIMProduct
 WHERE (CLASS <> 'H' OR CLASS IS NULL) AND [Status] IS NOT NULL
 
 
-IN & BETWEEN
+### IN & BETWEEN
 
 SELECT 
 
@@ -132,7 +130,7 @@ WHERE (SafetyStockLevel BETWEEN  500 AND 1000) AND [Status] IS NOT NULL --BEtWEE
 --WHERE (SafetyStockLevel >= 500 AND SafetyStockLevel<= 1000 ) AND [Status] IS NOT NULL
 --WHERE COLOR IN ('Black','White','Yellow','Silver')
 
---LIKE -- used to Identify partial matches using Wildcards
+### LIKE -- used to Identify partial matches using Wildcards
 
 SELECT 
 
@@ -143,7 +141,8 @@ FROM DimCustomer
 
 WHERE FirstName LIKE '_R%'
 
---Manupulating values, Conditional COLUMNS and also Formatting of codes
+### Manupulating values, Conditional COLUMNS and also Formatting of codes
+### Case statement
 
 SELECT 
     Firstname,
@@ -168,7 +167,7 @@ FROM DimCustomer
 WHERE IIF(YearlyIncome >50000,'Above Average', 'Below Averge') = 'Above Average'
 
 
---Using CAST PlUS How to comment out more than one row.
+### Using CAST PlUS How to comment out more than one row.
 
 /*SELECT Simple example of the CAST function
 
@@ -195,7 +194,7 @@ FROM DimProduct
 WHERE [Status] = 'Current'
 
 
---Adding Capital N before National or nvarcher for SQL Best Practice
+### Adding Capital N before National or nvarcher for SQL Best Practice
 
 SELECT 
 
@@ -213,11 +212,9 @@ FROM DIMProduct
 WHERE COLOR IN (N'Black',N'White',N'Yellow',N'Silver')
 
 --LIKE -- used to Identify partial matches using Wildcards
+    
 
-
---Exercise 1
-
-SELECT 
+### Queries for analysis
 
 SELECT 
 
@@ -232,7 +229,7 @@ FROM FactInternetSales
 WHERE DATENAME(Month,OrderDate) = N'December' AND SalesTerritoryKey = 1 
 
 
---Exercise 2
+### Query 2
 
 
 SELECT
