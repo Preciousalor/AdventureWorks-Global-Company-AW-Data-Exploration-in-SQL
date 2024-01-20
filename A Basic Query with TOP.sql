@@ -1,4 +1,3 @@
---A basic query as part of SQL fundamental course, including TOP N filter.
 
 
 SELECT TOP (10) PERCENT
