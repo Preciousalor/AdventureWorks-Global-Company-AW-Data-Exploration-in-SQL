@@ -162,6 +162,31 @@ WHERE fs.SalesOrderNumber = N'SO51178'
 
 GROUP BY dsr.SalesReasonReasonType
 
+
+### Rounding up numbers
+
+
+SELECT TOP (10) PERCENT
+SalesOrderNumber AS InvioceNumber,
+OrderDate,
+SUM(SalesAmount) AS InvoiceSubtotal ,
+ROUND(SUM(SalesAmount),1) AS InvoiceSubtotalRounded ,
+
+SUM(TaxAmt) AS TaxAmt,
+FLOOR(SUM(TaxAmt)) AS TaxAmtFloor,
+
+SUM(OrderQuantity) AS TotalQuantity,
+
+SUM(SalesAmount) + SUM(TaxAmt) AS InvoiceTotal
+FROM FactInternetSales
+
+WHERE salesTerritoryKey = 6
+
+Group By SalesOrderNumber, OrderDate
+HAVING SUM(SalesAmount) > 1000
+
+ORDER BY InvoiceSubtotal DESC
+
 ### Creating a view
 
 
