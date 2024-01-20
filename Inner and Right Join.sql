@@ -1,4 +1,4 @@
---situations where inner join may not work.
+
 
 SELECT
 
@@ -23,22 +23,7 @@ WHERE dp.Status = N'Current'
     ORDER BY SalesAmount DESC
 
 
-
-/* Test for number of total current products
-
-SELECT 
-
-    EnglishProductName 
-FROM Dimproduct
-
-WHERE [status] = N'current'
-*/
-
-
-
-
-
----multiple tables, Right join
+### multiple tables, Right join
 
 
 SELECT
@@ -60,8 +45,7 @@ GROUP BY dp.EnglishProductName, dp.Color, dp.Size
 
 ORDER BY SalesAmount DESC
 
-
---Multiple Tables Left join
+### Multiple Tables Left join
 
 SELECT
 
@@ -88,7 +72,7 @@ GROUP BY dp.EnglishProductName, dp.Color, dp.Size
 ORDER BY SalesAmount DESC
 
 
---Joining columns under Bridge in
+### Joining columns under Bridge in
 
 SELECT 
 
@@ -111,7 +95,7 @@ FROM FactInternetSales AS fs
 GROUP BY dsr.SalesReasonReasonType
 
 
---subselect in a select option
+### subselect in a view
 
 SELECT
     InvoiceNumber,
