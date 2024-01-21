@@ -3,6 +3,7 @@ In this project, we extract, transform, and load the customer base data of AW fo
 
 ### Selecting all Current product descriptions
 
+```sql
 SELECT
 
 dp.EnglishProductName AS ProdutName,
@@ -24,11 +25,12 @@ WHERE dp.Status = N'Current'
     GROUP BY EnglishProductName, Color, Size
 
     ORDER BY SalesAmount DESC
+```
 
 
 ### Selecting top 5 products from United States
 
-
+```sql
 SELECT TOP (5) 
 
     dpsc.EnglishproductSubcategoryName AS Subcategory,
@@ -50,9 +52,12 @@ AND dcy.CurrencyName=N'US Dollar'
 GROUP BY dpsc.EnglishproductSubcategoryName
 
 ORDER BY SalesAmount DESC
+```
 
 
 ### Selecting product descriptions from Europe
+
+```sql
 SELECT
 
     CONCAT(de.FirstName,' ', de.LastName) AS EmployeeName,
@@ -73,11 +78,12 @@ WHERE dst.SalesTerritoryGroup=N'Europe'
 AND de.[Status]=N'Current'
 
 GROUP BY de.FirstName,de.LastName,de.Title,dcy.CurrencyName
-
+```
 
 
 ### Test for the number of total current products
 
+```sql
 SELECT 
 
     EnglishProductName 
@@ -85,14 +91,14 @@ FROM Dimproduct
 
 WHERE [status] = N'current'
 */
-
+```
 
 
 
 
 ### multiple tables, Right join
 
-
+```sql
 SELECT
 
 dp.EnglishProductName AS ProdutName,
@@ -111,9 +117,12 @@ WHERE dp.Status = N'Current'
 GROUP BY dp.EnglishProductName, dp.Color, dp.Size
 
 ORDER BY SalesAmount DESC
+```
 
 
 ### Multiple Tables Left join
+
+```sql
 
 SELECT
 
@@ -138,10 +147,11 @@ WHERE dp.Status = N'Current'
 GROUP BY dp.EnglishProductName, dp.Color, dp.Size
 
 ORDER BY SalesAmount DESC
-
+```
 
 ### Joining columns 
 
+```Sql
 SELECT 
 
 --fs.SalesOrderNumber AS InvoiceNumber,
@@ -161,11 +171,12 @@ WHERE fs.SalesOrderNumber = N'SO51178'
 
 
 GROUP BY dsr.SalesReasonReasonType
-
+```
 
 ### Rounding up numbers
 
 
+```Sql
 SELECT TOP (10) PERCENT
 SalesOrderNumber AS InvioceNumber,
 OrderDate,
@@ -186,9 +197,11 @@ Group By SalesOrderNumber, OrderDate
 HAVING SUM(SalesAmount) > 1000
 
 ORDER BY InvoiceSubtotal DESC
+```
 
 ### Creating a view
 
+```Sql
 Create view #ProductDescriptionEurope as
 SELECT
 
@@ -210,11 +223,12 @@ WHERE dst.SalesTerritoryGroup=N'Europe'
 AND de.[Status]=N'Current'
 
 GROUP BY de.FirstName,de.LastName,de.Title,dcy.CurrencyName
-
+```
 
 
 ### subselect in a view
 
+```Sql
 SELECT
     InvoiceNumber,
     InvoiceLineNumber,
@@ -227,5 +241,5 @@ SELECT
 FROM vwOrdersALL
 
 WHERE OrderDate = (SELECT MAX(OrderDate) FROM vwOrdersALL)
-
+```
 
