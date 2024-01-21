@@ -96,7 +96,7 @@ WHERE [status] = N'current'
 
 
 
-### multiple tables, Right join
+### Multiple tables, Right join
 
 ```sql
 SELECT
